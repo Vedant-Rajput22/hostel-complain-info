@@ -317,6 +317,3 @@ docker compose up -d
 - Add rate limiting, logging, and backups for MySQL
 - Build frontend and serve via a CDN or web server; reverse‑proxy API behind Nginx/Caddy
 
----
-
-Feel free to tailor branding, screenshots, and institution‑specific details.
