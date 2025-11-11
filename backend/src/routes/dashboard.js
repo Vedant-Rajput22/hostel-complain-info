@@ -14,7 +14,10 @@ router.get('/student', authRequired, async (req, res) => {
         FROM complaints WHERE user_id = ?',
     [uid]
   ))[0] || { pending: 0, in_progress: 0, resolved: 0 };
-  const recent = await db('SELECT complaint_id, title, status, created_at FROM complaints WHERE user_id = ? ORDER BY created_at DESC LIMIT 5', [uid]);
+  const recent = await db(
+    'SELECT complaint_id, category, title, description, status, image_url, lighthouse_cid, room_no, floor, block, created_at, resolved_at, rating FROM complaints WHERE user_id = ? ORDER BY created_at DESC LIMIT 5',
+    [uid]
+  );
   res.json({ counts, recent });
 });
 

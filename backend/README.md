@@ -4,6 +4,9 @@ Setup
 - Copy `.env.example` to `.env` and update values.
 - Create database and tables: import `backend/sql/schema.sql` into your MySQL.
 - Install deps: `npm install`
+- Configure AWS S3 (see AWS_S3_SETUP.md for details):
+  - Set AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_S3_BUCKET in `.env`
+  - Test configuration: `node scripts/test-s3-upload.js`
 - Run: `npm run dev`
 
 Key Endpoints
@@ -23,5 +26,7 @@ Roles
 
 Notes
 - Email verification returns `verify_url` (simulate email). Wire a mailer in production.
-- File uploads saved in `backend/uploads` and served from `/uploads/*`.
+- **Image uploads**: Files are uploaded to AWS S3 in the `IMAGE/` folder. URLs stored in database.
+  - Previous local storage (`backend/uploads`) is no longer used for new uploads.
+  - See `AWS_S3_SETUP.md` for complete setup instructions.
 
