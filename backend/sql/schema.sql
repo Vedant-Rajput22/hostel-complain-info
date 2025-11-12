@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS complaints (
   floor VARCHAR(50),
   block VARCHAR(50),
   image_url VARCHAR(500),
+  lighthouse_cid VARCHAR(100),
   status ENUM('Pending','In Progress','Resolved') NOT NULL DEFAULT 'Pending',
   assigned_to INT NULL,
   created_at DATETIME NOT NULL,

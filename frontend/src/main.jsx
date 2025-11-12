@@ -14,9 +14,14 @@ import BusTimetable from './pages/BusTimetable.jsx'
 import EntryExitLogs from './pages/EntryExitLogs.jsx'
 import CleaningRequests from './pages/CleaningRequests.jsx'
 import InternetIssues from './pages/InternetIssues.jsx'
+import UserProfile from './pages/UserProfile.jsx'
+import OAuthCallback from './pages/OAuthCallback.jsx'
+import ErrorBoundary from './components/ErrorBoundary.jsx'
+import { ToastProvider } from './contexts/ToastContext.jsx'
 
 const router = createBrowserRouter([
-  { path: '/', element: <App />,
+  {
+    path: '/', element: <App />,
     children: [
       { index: true, element: <StudentDashboard /> },
       { path: 'admin', element: <AdminDashboard /> },
@@ -27,15 +32,21 @@ const router = createBrowserRouter([
       { path: 'logs', element: <EntryExitLogs /> },
       { path: 'cleaning', element: <CleaningRequests /> },
       { path: 'internet', element: <InternetIssues /> },
+      { path: 'profile', element: <UserProfile /> },
     ]
   },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Register /> },
+  { path: '/auth/callback', element: <OAuthCallback /> },
 ])
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ErrorBoundary>
+      <ToastProvider>
+        <RouterProvider router={router} />
+      </ToastProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 )
 

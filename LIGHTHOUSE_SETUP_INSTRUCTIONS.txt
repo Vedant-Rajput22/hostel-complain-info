@@ -1,0 +1,74 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                  LIGHTHOUSE - SETUP INSTRUCTIONS                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⚡ 3 SIMPLE STEPS TO GET STARTED ⚡
+
+Step 1: Get Your Lighthouse API Key
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Visit: https://files.lighthouse.storage/
+2. Click "Sign In" or "Get Started"
+3. Connect your wallet (MetaMask or similar)
+4. Go to "API Keys" section
+5. Click "Generate API Key"
+6. Copy the generated key
+
+Step 2: Add Key to Backend Environment
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Open: backend/.env
+
+Add this line:
+LIGHTHOUSE_API_KEY=paste_your_api_key_here
+
+Save the file.
+
+Step 3: Restart Your Backend Server
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Press Ctrl+C to stop the current server
+
+Then:
+cd backend
+npm run dev
+
+✅ THAT'S IT! YOU'RE DONE! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TEST IT:
+
+1. Login to your hostel portal
+2. File a complaint with some test data
+3. Click "Submit Complaint"
+4. See the beautiful modal with your Lighthouse CID!
+5. Click "View on IPFS" to see your data on blockchain
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION:
+
+- Quick Start: LIGHTHOUSE_QUICK_START.md
+- Full Guide: LIGHTHOUSE_INTEGRATION.md
+- Summary: LIGHTHOUSE_IMPLEMENTATION_SUMMARY.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 What This Does:
+
+Your complaints are now permanently stored on IPFS/Filecoin via 
+Lighthouse. The CID (Content Identifier) serves as proof that your
+complaint was filed and can be verified by anyone!
+
+Benefits:
+✓ Immutable (can't be changed)
+✓ Decentralized (not controlled by anyone)
+✓ Transparent (anyone can verify with CID)
+✓ Permanent (stored on blockchain forever)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ NEED HELP?
+
+- Lighthouse Docs: https://docs.lighthouse.storage/
+- Lighthouse Discord: https://discord.gg/lighthouse
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
